@@ -1,10 +1,12 @@
-# Consumo API
+# API de Condições meteorológicas das capitais do Brasil
 
-Na aula do dia 14/03, aprendemos como consumir APIs com a linguagem Python e a biblioteca requests.
-O material da aula pode ser acessado em https://github.com/orlandosaraivajr/FATEC_2024_1SEM_DW3/blob/main/ConsumoAPIs.pdf
-Para a primeira avaliação você deve criar individualmente um projeto que faça consumo de APIs. 
-O tema é livre. 
+Este é um consumo de API simples para verificar as condições climaticas das Capitais do Brasil
 
-Seu projeto deve apresentar informações, e não apenas exibir os dados brutos consumidos.
+#### Antes de executar este projeto, certifique-se de ter o Python instalado em sua máquina.
 
-No projeto será avaliado documentação, funcionalidade e domínio da linguagem python, visto até então. Este projeto deve estar em um repositório com o nome avaliação1_consumoAPI no seu github.
+### Configurando o Ambiente
+Na pasta do projeto, ative o ambiente virtual:
+```
+.\venv\Scripts\activate
+```
+

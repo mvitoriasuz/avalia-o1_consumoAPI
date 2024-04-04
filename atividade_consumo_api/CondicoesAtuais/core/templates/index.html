@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Previsão do Tempo</title>
+</head>
+<body>
+
+<h2>Previsão do Tempo</h2>
+
+<table id="weather-table">
+  <tr>
+    <th>Código</th>
+    <th>Atualização</th>
+    <th>Pressão</th>
+    <th>Temperatura</th>
+    <th>Tempo</th>
+    <th>Descrição do Tempo</th>
+    <th>Umidade</th>
+    <th>Vento Direção</th>
+    <th>Vento Intensidade</th>
+    <th>Intensidade</th>
+  </tr>
+</table>
+
+<button onclick="fetchData()">Atualizar</button>
+
+<h2>Siglas das Condições do Tempo</h2>
+
+<table border="1">
+  <tr>
+    <th>Sigla</th>
+    <th>Descrição</th>
+  </tr>
+  <tr>
+    <td>ec</td>
+    <td>Encoberto com Chuvas Isoladas</td>
+  </tr>
+  <tr>
+    <td>ci</td>
+    <td>Chuvas Isoladas</td>
+  </tr>
+  <!-- Adicione as demais linhas aqui -->
+</table>
+
+<h2>Estações de Superfície dos Aeroportos</h2>
+
+<table border="1">
+  <tr>
+    <th>Sigla</th>
+    <th>Aeroporto</th>
+    <th>Estado</th>
+  </tr>
+  <tr>
+    <td>SBTK</td>
+    <td>Tarauacá</td>
+    <td>AC</td>
+  </tr>
+  <tr>
+    <td>SBRB</td>
+    <td>Presidente Médici</td>
+    <td>AC</td>
+  </tr>
+  <!-- Adicione as demais linhas aqui -->
+</table>
+
+<script>
+    function fetchData() {
+        // URL da API que retorna o XML
+        var url = 'http://servicos.cptec.inpe.br/XML/capitais/condicoesAtuais.xml';
+
+        // Fazendo a solicitação GET para a API
+        fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            // Parse do XML retornado pela API
+            var parser = new DOMParser();
+            var xmlDoc = parser.parseFromString(data, "text/xml");
+
+            // Limpa a tabela
+            var table = document.getElementById("weather-table");
+            table.innerHTML = "<tr><th>Código</th><th>Atualização</th><th>Pressão</th><th>Temperatura</th><th>Tempo</th><th>Descrição do Tempo</th><th>Umidade</th><th>Vento Direção</th><th>Vento Intensidade</th><th>Intensidade</th></tr>";
+
+            // Iterar sobre os elementos metar
+            var metars = xmlDoc.getElementsByTagName("metar");
+            for (var i = 0; i < metars.length; i++) {
+                var codigo = metars[i].getElementsByTagName("codigo")[0].textContent;
+                var atualizacao = metars[i].getElementsByTagName("atualizacao")[0].textContent;
+                var pressao = metars[i].getElementsByTagName("pressao")[0].textContent;
+                var temperatura = metars[i].getElementsByTagName("temperatura")[0].textContent;
+                var tempo = metars[i].getElementsByTagName("tempo")[0].textContent;
+                var tempo_desc = metars[i].getElementsByTagName("tempo_desc")[0].textContent;
+                var umidade = metars[i].getElementsByTagName("umidade")[0].textContent;
+                var vento_dir = metars[i].getElementsByTagName("vento_dir")[0].textContent;
+                var vento_int = metars[i].getElementsByTagName("vento_int")[0].textContent;
+                var intensidade = metars[i].getElementsByTagName("intensidade")[0].textContent;
+
+                // Adiciona uma nova linha à tabela com os dados do metar atual
+                var newRow = table.insertRow(-1);
+                var cells = [codigo, atualizacao, pressao, temperatura, tempo, tempo_desc, umidade, vento_dir, vento_int, intensidade];
+                for (var j = 0; j < cells.length; j++) {
+                    var cell = newRow.insertCell(j);
+                    cell.textContent = cells[j];
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao buscar dados:', error);
+        });
+    }
+</script>
+
+</body>
+</html>

@@ -2,6 +2,10 @@
 
 Este é um consumo de API simples para verificar as condições meteorológicas atuais das capitais dos estados brasileiros, que retorna uma lista de informações atualizadas de hora em hora, relativas aos dados das Estações de Superfície dos Aeroportos listando apenas os dados Metar dos aeroportos localizados nas capitais.
 
+### Para entender a sigla de quatro letras que representa a estação meteorológica de superfície. Veja a seguinte documentação 
+ - [Estações de Superfície dos Aeroportos](http://servicos.cptec.inpe.br/XML/#estacoes-metar:~:text=Topo-,Esta%C3%A7%C3%B5es%20de%20Superf%C3%ADcie%20dos%20Aeroportos,-Sigla)
+ - [Siglas das condições do tempo](http://servicos.cptec.inpe.br/XML/#estacoes-metar:~:text=Topo-,Siglas%20das%20condi%C3%A7%C3%B5es%20do%20tempo,-Sigla)
+
 ### URL para requisição dos dados das condições meteorológicas atuais das capitais
 http://servicos.cptec.inpe.br/XML/capitais/condicoesAtuais.xml
 
@@ -32,10 +36,6 @@ pip freeze > requirements.txt
 \atividade_consumo_api\CondicoesAtuais>python manage.py runserver
 ```
 Caso o servidor de desenvolvimento Django seja iniciado com sucesso, será apresentadoo o endereço IP padrão para o seu próprio computador (localhost), e a porta, fazendo com que você acesse a aplicação Django no navegador de prefefencia
-
-### Para entender a sigla de quatro letras que representa a estação meteorológica de superfície. Veja a seguinte documentação 
- - [Estações de Superfície dos Aeroportos](http://servicos.cptec.inpe.br/XML/#estacoes-metar:~:text=Topo-,Esta%C3%A7%C3%B5es%20de%20Superf%C3%ADcie%20dos%20Aeroportos,-Sigla)
- - [Siglas das condições do tempo](http://servicos.cptec.inpe.br/XML/#estacoes-metar:~:text=Topo-,Siglas%20das%20condi%C3%A7%C3%B5es%20do%20tempo,-Sigla)
 
 ## Esse projeto foi desenvolvimento a partir das seguintes ferramentas
 <p align="left"> <a href="https://www.djangoproject.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>

@@ -3,7 +3,7 @@ import requests
 
 def CondicoesAtuais(request): 
     try:
-        URL = "http://servicos.cptec.inpe.br/XML/estacao/SBGR/condicoesAtuais.xml"
+        URL = "http://servicos.cptec.inpe.br/XML/capitais/condicoesAtuais.xml"
         resp = requests.get(URL)
 
         if resp.status_code == 200:

@@ -7,7 +7,7 @@ Este é um consumo de API simples para verificar as condições meteorológicas 
  - [Siglas das condições do tempo](http://servicos.cptec.inpe.br/XML/#estacoes-metar:~:text=Topo-,Siglas%20das%20condi%C3%A7%C3%B5es%20do%20tempo,-Sigla)
 
 ### URL para requisição dos dados das condições meteorológicas atuais das capitais
-http://servicos.cptec.inpe.br/XML/estacao/SBBE/condicoesAtuais.xml
+http://servicos.cptec.inpe.br/XML/capitais/condicoesAtuais.xml
 
 # Requisitos
 - Python

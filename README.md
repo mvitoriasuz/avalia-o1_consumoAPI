@@ -2,7 +2,7 @@
 
 Este é um consumo de API simples para verificar as condições meteorológicas atuais das capitais dos estados brasileiros, que retorna uma lista de informações atualizadas de hora em hora, relativas aos dados das Estações de Superfície dos Aeroportos listando apenas os dados Metar dos aeroportos localizados nas capitais.
 
-### Para entender a sigla de quatro letras que representa a estação meteorológica de superfície e realizar a passagem de parâmetro. Veja a seguinte documentação 
+### Para entender a sigla de quatro letras que representa a estação meteorológica de superfície, veja a seguinte documentação:
  - [Estações de Superfície dos Aeroportos](http://servicos.cptec.inpe.br/XML/#estacoes-metar:~:text=Topo-,Esta%C3%A7%C3%B5es%20de%20Superf%C3%ADcie%20dos%20Aeroportos,-Sigla)
  - [Siglas das condições do tempo](http://servicos.cptec.inpe.br/XML/#estacoes-metar:~:text=Topo-,Siglas%20das%20condi%C3%A7%C3%B5es%20do%20tempo,-Sigla)
 
